@@ -1,4 +1,4 @@
-## React app using Spec auth
+# React app using Spec auth
 
 This React app demonstrates how easy it is to use Spec for web3 auth.
 
