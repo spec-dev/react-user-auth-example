@@ -6,6 +6,7 @@ function App() {
     const { user, isPending } = useAuthUser()
     const [isSigningIn, setIsSigningIn] = useState(false)
 
+    // Spec sign-in.
     const signIn = useCallback(async () => {
         // Show loading animation.
         setIsSigningIn(true)
@@ -18,6 +19,7 @@ function App() {
         setIsSigningIn(false)
     }, [])
 
+    // Spec sign-out.
     const signOut = useCallback(async () => {
         const { error } = await spec.auth.disconnect()
         if (error) console.error(error)
