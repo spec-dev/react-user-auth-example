@@ -37,10 +37,12 @@ function App() {
 
     // Either show the authed "app" or the sign-in "page".
     return (
-        <div className="container">
+        <div className='container'>
             {user ? (
                 <div>
-                    <div>{user.did?.domain || user.id}</div>
+                    <div className='output'>
+                        {JSON.stringify(user, null, 4)}
+                    </div>
                     <div>
                         <button onClick={signOut}>
                             Sign Out
