@@ -18,10 +18,10 @@ function App() {
         setIsSigningIn(false)
     }, [])
 
-    const signOut = async () => {
+    const signOut = useCallback(async () => {
         const { error } = await spec.auth.disconnect()
         if (error) console.error(error)
-    }
+    }, [])
 
     // If initial auth state is still being determined...
     if (isPending) {
