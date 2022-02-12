@@ -40,12 +40,8 @@ function App() {
         <div className='container'>
             {user ? (
                 <div>
-                    <div className='output'>
-                        { JSON.stringify(user, null, 4) }
-                    </div>
-                    { user.did?.textRecords?.avatar &&
-                        <img width="100px" src={user.did.textRecords.avatar} alt=""/>
-                    }
+                    <div className='output'>{JSON.stringify(user, null, 4)}</div>
+                    { user.did?.textRecords?.avatar && <img width="100px" src={user.did.textRecords.avatar}/> }
                     <div>
                         <button onClick={signOut}>Sign Out</button>
                     </div>

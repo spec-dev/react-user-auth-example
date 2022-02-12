@@ -6,15 +6,15 @@ This React app demonstrates how to use Spec for web3 auth (i.e. wallet sign-in).
 
 1) Clone this repository.
 
-```
-$ git clone https://github.com/spec-dev/react-user-auth-example && cd react-user-auth-example
-```
+    ```
+    $ git clone https://github.com/spec-dev/react-user-auth-example && cd react-user-auth-example
+    ```
 
 2) Install dependencies
 
-```
-$ npm install
-```
+    ```
+    $ npm install
+    ```
 
 3) Using your preferred method, ensure the following environment variables are set.
 
