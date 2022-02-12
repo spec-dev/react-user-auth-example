@@ -4,7 +4,7 @@
     "private": true,
     "dependencies": {
         "@craco/craco": "^6.0.0",
-        "@spec.dev/client": "^0.0.5",
+        "@spec.dev/client": "^0.0.6",
         "@tailwindcss/postcss7-compat": "^2.0.2",
         "autoprefixer": "9",
         "postcss": "8",
