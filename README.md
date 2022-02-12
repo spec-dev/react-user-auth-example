@@ -1,4 +1,4 @@
-React app with Spec auth
+# React app with Spec auth
 
 This React app demonstrates how to use Spec for web3 auth (i.e. wallet sign-in).
 
