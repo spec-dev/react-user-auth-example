@@ -12,8 +12,8 @@ function App() {
         setIsSigningIn(true)
 
         // Sign-in with Spec.
-        const { user, error } = await spec.auth.connect()
-        error ? console.error(error) : console.log(user)
+        const { error } = await spec.auth.connect()
+        if (error) console.error(error)
 
         // Stop loading animation.
         setIsSigningIn(false)
@@ -41,7 +41,9 @@ function App() {
             {user ? (
                 <div>
                     <div className='output'>{JSON.stringify(user, null, 4)}</div>
-                    { user.did?.textRecords?.avatar && <img width="100px" src={user.did.textRecords.avatar}/> }
+                    { user.did?.textRecords?.avatar &&
+                        <img width="100px" src={user.did.textRecords.avatar} alt=""/>
+                    }
                     <div>
                         <button onClick={signOut}>Sign Out</button>
                     </div>
