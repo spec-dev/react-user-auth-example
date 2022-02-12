@@ -1,10 +1,10 @@
-# React app using Spec auth
+# Example React app using Spec for auth
 
-This React app demonstrates how easy it is to use Spec for web3 auth.
+This React app demonstrates how to use Spec for web3 auth (i.e. wallet sign-in).
 
 ## Setup
 
-1) Clone this repo
+1) Clone this repository.
 
 ```
 $ git clone https://github.com/spec-dev/react-user-auth-example && cd react-user-auth-example
@@ -16,21 +16,31 @@ $ git clone https://github.com/spec-dev/react-user-auth-example && cd react-user
 $ npm install
 ```
 
-3) Set environment variables
+3) Using your preferred method, ensure the following environment variables are set.
 
-```
-export REACT_APP_SPEC_URL="https://<your-project-id>.spec.dev"
-export REACT_APP_SPEC_KEY="<your-spec-public-anon-key>"
-export REACT_APP_INFURA_ID="<your-infura-id>"
-```
+- `REACT_APP_SPEC_URL`: Your Spec project's URL (e.g. `https://<your-project-id>.spec.dev`)
 
-## Usage
+- `REACT_APP_SPEC_KEY`: Your Spec project's public anon key
 
-Run the app
+- `REACT_APP_INFURA_ID`: Your infura API key
+
+## Quickstart
+
+Start the app:
 
 ```
 $ npm start
 ```
+
+## Contents
+
+This app consists of the following key files:
+
+[`App.js`](src/App.js) - The React app
+
+[`spec.js`](src/lib/spec.js) - Creates and exports your Spec client
+
+[`useAuthUser.js`](src/lib/hooks/useAuthUser.js) - Custom React hook to manage the state of the currently signed-in user
 
 ## License
 

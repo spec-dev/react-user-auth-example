@@ -2,13 +2,20 @@ import { useState, useEffect } from 'react'
 import { spec } from '../spec'
 
 export function useAuthUser() {
-    // Manage the currently authed Spec user.
     const [auth, setAuth] = useState({
+        /**
+         * The currently signed-in user (if any).
+         */
         user: spec.auth.user(),
-        // Whether the initial auth status is still being determined.
-        // This can be true if a user's cached session on initial
-        // page load is expired and is actively being refreshed.
+        /**
+         * Boolean indicating whether the initial auth status is still being determined.
+         * This can be true if a user's cached session on initial page load is expired
+         * and is still actively being refreshed
+         */
         isPending: spec.auth.isPendingInitialState(),
+        /**
+         * Any auth errors.
+         */
         error: null,
     })
 

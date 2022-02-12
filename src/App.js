@@ -6,7 +6,7 @@ function App() {
     const { user, isPending } = useAuthUser()
     const [isSigningIn, setIsSigningIn] = useState(false)
 
-    // Spec sign-in.
+    // Kick-off Spec wallet sign-in.
     const signIn = useCallback(async () => {
         // Show loading animation.
         setIsSigningIn(true)
@@ -19,7 +19,7 @@ function App() {
         setIsSigningIn(false)
     }, [])
 
-    // Spec sign-out.
+    // Sign the user out of all active sessions.
     const signOut = useCallback(async () => {
         const { error } = await spec.auth.disconnect()
         if (error) console.error(error)
@@ -41,19 +41,18 @@ function App() {
             {user ? (
                 <div>
                     <div className='output'>
-                        {JSON.stringify(user, null, 4)}
+                        { JSON.stringify(user, null, 4) }
                     </div>
+                    { user.did?.textRecords?.avatar &&
+                        <img width="100px" src={user.did.textRecords.avatar} alt=""/>
+                    }
                     <div>
-                        <button onClick={signOut}>
-                            Sign Out
-                        </button>
+                        <button onClick={signOut}>Sign Out</button>
                     </div>
                 </div>
             ) : (
                 <div>
-                    <button onClick={signIn}>
-                        Sign In
-                    </button>
+                    <button onClick={signIn}>Sign In</button>
                 </div>
             )}
         </div>
